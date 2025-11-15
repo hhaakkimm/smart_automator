@@ -1,0 +1,65 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# ---- Virtual Environments ----
+venv/
+.env/
+env/
+.venv/
+
+# ---- Django ----
+*.log
+staticfiles/
+media/
+db.sqlite3
+local_settings.py
+
+# ---- Environment & Secrets ----
+*.env
+.env.*
+!env.example
+
+# ---- VSCode ----
+.vscode/
+.history/
+
+# ---- PyCharm / JetBrains ----
+.idea/
+*.iml
+
+# ---- OS-specific ----
+.DS_Store
+Thumbs.db
+
+# ---- Docker ----
+# Ignore build artifacts
+**/__pycache__/
+*.pid
+
+# If you mount logs or other data dirs:
+docker-data/
+logs/
+
+# ---- Node (if your project later includes frontend) ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Coverage / Testing ----
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache/
+pytest_cache/
+
+# ---- Misc ----
+*.swp
+*.swo

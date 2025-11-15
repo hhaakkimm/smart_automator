@@ -1,0 +1,19 @@
+version: '3.10'
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: automator
+      POSTGRES_PASSWORD: automator
+      POSTGRES_DB: automator
+    ports:
+      - "5432:5432"
