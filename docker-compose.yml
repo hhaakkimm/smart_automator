@@ -1,19 +1,22 @@
-version: '3.10'
 services:
   web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    build: ./backend
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./backend:/app
     depends_on:
       - db
   db:
     image: postgres:15
     environment:
-      POSTGRES_USER: automator
-      POSTGRES_PASSWORD: automator
-      POSTGRES_DB: automator
+      POSTGRES_USER: automator_user
+      POSTGRES_PASSWORD: automator_pass
+      POSTGRES_DB: automator_db
     ports:
       - "5432:5432"
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
