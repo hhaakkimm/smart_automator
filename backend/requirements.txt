@@ -2,3 +2,6 @@ django
 djangorestframework
 psycopg2-binary
 django-filter
+djangorestframework-simplejwt
+django-cors-headers
+drf-yasg
