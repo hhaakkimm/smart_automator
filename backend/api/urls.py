@@ -1,12 +1,10 @@
-from django.urls import path
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from .views import TaskViewSet
+from rest_framework.routers import DefaultRouter
+from django.urls import path, include
 
-@api_view(["GET"])
-def ping(request):
-    return Response({"status": "ok"})
-
+router = DefaultRouter()
+router.register(r'tasks', TaskViewSet, basename='tasks')
 
 urlpatterns = [
-    path('ping/', ping),
+    path("", include(router.urls)),
 ]
